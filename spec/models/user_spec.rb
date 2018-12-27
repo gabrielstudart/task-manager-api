@@ -12,8 +12,9 @@ RSpec.describe User, type: :model do
   describe '#info' do
     it 'returns user email and created at' do
       user.save!
+      allow(Devise).to receive(:friendly_token).and_return('abc1234XYZ123')
 
-      expect(user.info).to eq("#{user.email} - #{user.created_at}")
+      expect(user.info).to eq("#{user.email} - #{user.created_at} - Token: #{Devise.friendly_token}")
     end
   end
 end
