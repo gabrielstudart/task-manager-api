@@ -28,14 +28,14 @@ RSpec.describe 'Task API' do
       end
     end
 
-    context 'when filter params are sent' do
+    context 'when filter and sorting params are sent' do
       let!(:notebook_task_1) { create(:task, title: 'Tarefa notebook 1', user_id: user.id) }
       let!(:notebook_task_2) { create(:task, title: 'Tarefa notebook 2', user_id: user.id) }
       let!(:other_task_1) { create(:task, title: 'Fix the door', user_id: user.id) }
       let!(:other_task_2) { create(:task, title: 'Buy a new car', user_id: user.id) }
 
       before do
-        get '/tasks?q[title_cont]=note', params: {}, headers: headers
+        get '/tasks?q[title_cont]=note&q[s]=title+ASC', params: {}, headers: headers
       end
 
       it 'returns only the matching tasks' do
