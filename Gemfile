@@ -20,6 +20,7 @@ gem 'puma', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
+gem 'active_model_serializers', '~> 0.10.0'
 
 
 # Use Capistrano for deployment
