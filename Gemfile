@@ -21,6 +21,7 @@ gem 'puma', '~> 3.0'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'ransack'
 
 
 # Use Capistrano for deployment
